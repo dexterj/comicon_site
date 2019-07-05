@@ -74,10 +74,18 @@
 						<!-- Content -->
 						<div class="wrapper">
 							<div class="inner">
-								<button onclick="showHide('all')" id="all-btn" class="showhide-btn active">All</button>
-								<button onclick="showHide('auth')" id="auth-btn" class="showhide-btn">Authors</button>
-								<button onclick="showHide('ill')" id="ill-btn" class="showhide-btn">Illustrators</button>
-								<button onclick="showHide('craft')" id="craft-btn" class="showhide-btn">Arts/Crafts</button>
+								<button onclick="showHide(this)" data-btn="all" class="btn showhide-btn active">
+									All
+								</button>
+								<button onclick="showHide(this)" data-btn="auth" class="btn showhide-btn">
+									Authors
+								</button>
+								<button onclick="showHide(this)" data-btn="ill" class="btn showhide-btn">
+									Illustrators
+								</button>
+								<button onclick="showHide(this)" data-btn="craft" class="btn showhide-btn">
+									Arts/Crafts
+								</button>
 								<div class="image-section">
 								  <div class="homepage search-grid" id="homepage_grid">
 								<!-- Leave the first one as is. It's for the JS -->
@@ -344,6 +352,8 @@
 	          // columnWidth: 20%
 	        });
 
+	    // CREATOR SEARCH SECTION
+
 	        var $grid = $('.search-grid').masonry({
 	          columnWidth: '.search-grid-sizer',
 	          itemSelector: '.search-grid-item',
@@ -366,57 +376,47 @@
 			ctrsLength = ctrs.length;
 			ctrsArray = new Array();
 
-			ctrsAuth  = document.getElementsByClassName("auth");
-			ctrsAuthLength = ctrsAuth.length;
-			ctrsAuthArray = new Array();
 
-			ctrsIll  = document.getElementsByClassName("ill");
-			ctrsIllLength = ctrsIll.length;
-			ctrsIllArray = new Array();
-
-			ctrsCraft  = document.getElementsByClassName("craft");
-			ctrsCraftLength = ctrsCraft.length;
-			ctrsCraftArray = new Array();
-
-			ctrsCosplay  = document.getElementsByClassName("cosplay");
-			ctrsCosplayLength = ctrsCosplay.length;
-			ctrsCosplayArray = new Array();
 
 			for(var j = 0; j < btnLength; j++){
-			    btnArray.push(btns[j].id);
+			    btnArray.push(btns[j].getAttribute('data-btn'));
 			}
 			for(var o = 0; o < ctrsLength; o++){
 			    ctrsArray.push(ctrs[o].id);
 			}
-			for(var k = 0; k < ctrsAuthLength; k++){
-			    ctrsAuthArray.push(ctrsAuth[k].id);
-			}
-			for(var l = 0; l < ctrsIllLength; l++){
-			    ctrsIllArray.push(ctrsIll[l].id);
-			}
-			for(var m = 0; m < ctrsCraftLength; m++){
-			    ctrsCraftArray.push(ctrsCraft[m].id);
-			}
-			for(var m = 0; m < ctrsCosplayLength; n++){
-			    ctrsCosplayArray.push(ctrsCosplay[n].id);
-			}
+			// for(var k = 0; k < ctrsAuthLength; k++){
+			//     ctrsAuthArray.push(ctrsAuth[k].id);
+			// }
+			// for(var l = 0; l < ctrsIllLength; l++){
+			//     ctrsIllArray.push(ctrsIll[l].id);
+			// }
+			// for(var m = 0; m < ctrsCraftLength; m++){
+			//     ctrsCraftArray.push(ctrsCraft[m].id);
+			// }
+			// for(var m = 0; m < ctrsCosplayLength; n++){
+			//     ctrsCosplayArray.push(ctrsCosplay[n].id);
+			// }
 		});
 
 			function showHide(i) {
 				el = i;
-				elbtn = document.getElementById( el + "-btn");
+				elName = el.getAttribute('data-btn');
+				elStrng = '"' + elName + '"';
+				elbtn = document.getElementsByClassName( elName + "-btn");
+				console.log(elName);
 				// elArray = ctrs + el.charAt(0).toUpperCase() + el.substr(1).toLowerCase() + Array;
 				// console.log(elArray);
 				// console.log(elbtn);
 
-
+				// document.querySelectorAll('data-btn').classList.remove("active");
 
 				btnArray.forEach(
 					function(item){
-						console.log(document.getElementById(item));
-						document.getElementById(item).classList.remove("active");
+						$('[data-btn="' + item + '"]').removeClass("active");
 					}
 				);
+
+				$('[data-btn="' + elName + '"]').addClass("active");
 
 				ctrsArray.forEach(
 					function(item){
@@ -424,38 +424,43 @@
 					}
 				);
 
-				if (el == "auth") {
-					ctrsAuthArray.forEach(
-						function(item){
-							document.getElementById(item).classList.remove("hide");
-						}
-					);
-				} else if (el == "ill") {
-					ctrsIllArray.forEach(
-						function(item){
-							document.getElementById(item).classList.remove("hide");
-						}
-					);
-				} else if ( el == "craft") {
-					ctrsCraftArray.forEach(
-						function(item){
-							document.getElementById(item).classList.remove("hide");
-						}
-					);
-				} else if ( el == "cosplay") {
-					ctrsCostplayArray.forEach(
-						function(item){
-							document.getElementById(item).classList.remove("hide");
-						}
-					);
-				} else {
-					ctrsArray.forEach(
-						function(item){
-							document.getElementById(item).classList.remove("hide");
-						}
-					);
-				}
-				elbtn.classList.add("active");
+				if (elName == "all") { $('.search-grid-item' ).removeClass("hide"); } 
+				else { $('.search-grid-item.' + elName ).removeClass("hide"); }
+
+				// document.getElementByClass(elName).classList.remove('hide');
+
+				// if (el == "auth") {
+				// 	ctrsAuthArray.forEach(
+				// 		function(item){
+				// 			document.getElementById(item).classList.remove("hide");
+				// 		}
+				// 	);
+				// } else if (el == "ill") {
+				// 	ctrsIllArray.forEach(
+				// 		function(item){
+				// 			document.getElementById(item).classList.remove("hide");
+				// 		}
+				// 	);
+				// } else if ( el == "craft") {
+				// 	ctrsCraftArray.forEach(
+				// 		function(item){
+				// 			document.getElementById(item).classList.remove("hide");
+				// 		}
+				// 	);
+				// } else if ( el == "cosplay") {
+				// 	ctrsCostplayArray.forEach(
+				// 		function(item){
+				// 			document.getElementById(item).classList.remove("hide");
+				// 		}
+				// 	);
+				// } else {
+				// 	ctrsArray.forEach(
+				// 		function(item){
+				// 			document.getElementById(item).classList.remove("hide");
+				// 		}
+				// 	);
+				// }
+				// elbtn.classList.add("active");
 
 				setTimeout(function () {
 
