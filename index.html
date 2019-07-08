@@ -11,15 +11,6 @@
 		<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
 		<link rel="stylesheet" href="assets/css/main.css" />
 		<noscript><link rel="stylesheet" href="assets/css/noscript.css" /></noscript>
-		<style media="screen">
-			.image-section .grid-item, .image-section .grid-sizer { opacity: 0.2; width: 33.33333%; background-repeat: no-repeat; background-position: center center; background-size: cover!important; }
-			@media (min-width: 31.25em){ .image-section .grid-item, .image-section .grid-sizer { width: 25%; } }
-			@media (min-width: 37.5em){ .image-section .grid-item, .image-section .grid-sizer { width: 20%; } }
-			@media (min-width: 48em){ .image-section .grid-item, .image-section .grid-sizer { width: 16.66667%; } }
-			.image-section .grid-item:after, .image-section .grid-sizer:after { width: 100%; display: block; padding-top: 66.666%; content: " "; }
-			.image-section.has-callout.layout-wait-times.add-site-nav-offset { position: absolute; width: 100%; top: 0; left: 0;}
-		</style>
-
 	</head>
 	<body class="is-preload">
 
@@ -31,6 +22,7 @@
 						<h1><a href="index.html">Comic Book I-Con</a></h1>
 						<nav>
 							<a href="#menu">Menu</a>
+							<a href="#creators">Creators</a>
 						</nav>
 					</header>
 
@@ -43,6 +35,13 @@
 								<li><a href="generic.html">Generic</a></li>
 								<li><a href="elements.html">Elements</a></li>
 							</ul>
+							<a href="#" class="close">Close</a>
+						</div>
+					</nav>
+				<!-- Poppin -->
+					<nav id="poppin">
+						<div class="inner">
+							<div class="Popup_creator"></div>
 							<a href="#" class="close">Close</a>
 						</div>
 					</nav>
@@ -71,140 +70,129 @@
 
 					</section>
 					<section id="wrapper">
-						<!-- Content -->
-						<div class="wrapper">
-							<div class="inner">
-								<button onclick="showHide(this)" data-btn="all" class="btn showhide-btn active">
-									All
-								</button>
-								<button onclick="showHide(this)" data-btn="auth" class="btn showhide-btn">
-									Authors
-								</button>
-								<button onclick="showHide(this)" data-btn="ill" class="btn showhide-btn">
-									Illustrators
-								</button>
-								<button onclick="showHide(this)" data-btn="craft" class="btn showhide-btn">
-									Arts/Crafts
-								</button>
-								<div class="image-section">
-								  <div class="homepage search-grid" id="homepage_grid">
-								<!-- Leave the first one as is. It's for the JS -->
-								    <div class="search-grid-sizer"></div>
-										<div class="search-grid-item auth ill" id="aaroncarlo">
-											<div class="search-grid-inside">
-							          <a href="">
-							            <img src="http://www.iowacomicbookclub.com/wp-content/uploads/2018/08/ACARLO.jpg"/>
-							          </a>
-							          <p>Aaron Carlo</p>
-							        </div>
-											<div class="hidden">
-												<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
-												<ul>
-													<li><a href="#">Facebook</a></li>
-												</ul>
-											</div>
-						        </div>
-						        <div class="search-grid-item auth" id="acmiller">
-											<div class="search-grid-inside">
-							          <a href="">
-							            <img src="http://www.iowacomicbookclub.com/wp-content/uploads/2018/08/ACMILLER.jpg"/>
-							          </a>
-							          <p>AC Miller</p>
-											</div>
-											<div class="hidden">
-												<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
-												<ul>
-													<li><a href="#">Facebook</a></li>
-												</ul>
-											</div>
-						        </div>
-						        <div class="search-grid-item auth ill" id="jetfalco">
-											<div class="search-grid-inside">
-							          <a href="">
-							            <img src="http://www.iowacomicbookclub.com/wp-content/uploads/2018/08/JFALCO.jpg"/>
-							          </a>
-							          <p>Jet Falco</p>
-											</div>
-											<div class="hidden">
-												<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
-												<ul>
-													<li><a href="#">Facebook</a></li>
-												</ul>
-											</div>
-						        </div>
-						        <div class="search-grid-item auth ill" id="jonsims">
-											<div class="search-grid-inside">
-							          <a href="">
-							            <img src="http://www.iowacomicbookclub.com/wp-content/uploads/2018/08/JSIMS.jpg"/>
-							          </a>
-							          <p>Jon Sims</p>
-											</div>
-											<div class="hidden">
-												<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
-												<ul>
-													<li><a href="#">Facebook</a></li>
-												</ul>
-											</div>
-						        </div>
-						        <div class="search-grid-item auth" id="mlwilliams">
-											<div class="search-grid-inside">
-							          <a href="">
-							            <img src="http://www.iowacomicbookclub.com/wp-content/uploads/2018/08/MLWILLIAMS.jpg"/>
-							          </a>
-							          <p>ML Williams</p>
-											</div>
-											<div class="hidden">
-												<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
-												<ul>
-													<li><a href="#">Facebook</a></li>
-												</ul>
-											</div>
-						        </div>
-						        <div class="search-grid-item craft" id="kingscarvings">
-											<div class="search-grid-inside">
-							          <a href="">
-							            <img src="http://www.iowacomicbookclub.com/wp-content/uploads/2018/08/KINGS.jpg"/>
-							          </a>
-							          <p>Kings Carvings</p>
-											</div>
-											<div class="hidden">
-												<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
-												<ul>
-													<li><a href="#">Facebook</a></li>
-												</ul>
-											</div>
-						        </div>
-						        <div class="search-grid-item auth ill" id="nickpendleton">
-											<div class="search-grid-inside">
-							          <a href="">
-							            <img src="http://www.iowacomicbookclub.com/wp-content/uploads/2018/08/NPENDLETON.jpg"/>
-							          </a>
-							          <p>Nick Pendleton</p>
-											</div>
-											<div class="hidden">
-												<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
-												<ul>
-													<li><a href="#">Facebook</a></li>
-												</ul>
-											</div>
-										</div>
-									</div>
-								</div>
-							</div>
-						</div>
-					</section>
-
-				<!-- Wrapper -->
-					<section id="wrapper">
 
 						<!-- One -->
 							<section id="one" class="wrapper spotlight style1">
 								<div class="inner">
-									<a href="#" class="image"><img src="http://www.fillmurray.com/600/600" alt="" /></a>
+									<!-- <a href="#" class="image"><img src="http://www.fillmurray.com/600/600" alt="" /></a> -->
 									<div class="content">
-										<h2 class="major">Artists &amp; Creators</h2>
-										<p>Authors, Illustrators, Cosplayers, Creators. <br/>Everybody and Anything that makes pop-culture great!</p>
-										<a href="creators/" class="special">See them all!</a>
+										<h2 class="major">Artists &amp; Creators</h2>										
+
+										<button onclick="showHide(this)" data-btn="all" class="btn showhide-btn active">
+											All
+										</button>
+										<button onclick="showHide(this)" data-btn="auth" class="btn showhide-btn">
+											Authors
+										</button>
+										<button onclick="showHide(this)" data-btn="ill" class="btn showhide-btn">
+											Illustrators
+										</button>
+										<button onclick="showHide(this)" data-btn="craft" class="btn showhide-btn">
+											Arts/Crafts
+										</button>
+
+										<div class="image-section">
+										  <div class="homepage search-grid" id="homepage_grid">
+											<!-- Leave the first one as is. It's for the JS -->
+										    <div class="search-grid-sizer"></div>
+											<div class="search-grid-item auth ill" id="aaroncarlo">
+												<a href="#poppin" class="search-grid-inside" onclick="showCreator(this);">
+						            				<img src="http://www.iowacomicbookclub.com/wp-content/uploads/2018/08/ACARLO.jpg"/>
+							          				<p>Aaron Carlo</p>
+							        			</a>
+												<div class="hidden txt-container">
+													<h2>Aaron Carlo</h2>
+													<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+													<ul>
+														<li><a href="#">Facebook</a></li>
+													</ul>
+												</div>
+									        </div>
+									        <div class="search-grid-item auth" id="acmiller">
+												<a href="#poppin" class="search-grid-inside" onclick="showCreator(this)">
+									            	<img src="http://www.iowacomicbookclub.com/wp-content/uploads/2018/08/ACMILLER.jpg"/>
+										          	<p>AC Miller</p>
+												</a>
+												<div class="hidden txt-container">
+													<h2>AC Miller</h2>
+													<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+													<ul>
+														<li><a href="#">Facebook</a></li>
+													</ul>
+												</div>
+									        </div>
+									        <div class="search-grid-item auth ill" id="jetfalco">
+														<div class="search-grid-inside">
+										          <a href="">
+										            <img src="http://www.iowacomicbookclub.com/wp-content/uploads/2018/08/JFALCO.jpg"/>
+										          </a>
+										          <p>Jet Falco</p>
+														</div>
+														<div class="hidden txt-container">
+															<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+															<ul>
+																<li><a href="#">Facebook</a></li>
+															</ul>
+														</div>
+									        </div>
+									        <div class="search-grid-item auth ill" id="jonsims">
+														<div class="search-grid-inside">
+										          <a href="">
+										            <img src="http://www.iowacomicbookclub.com/wp-content/uploads/2018/08/JSIMS.jpg"/>
+										          </a>
+										          <p>Jon Sims</p>
+														</div>
+														<div class="hidden txt-container">
+															<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+															<ul>
+																<li><a href="#">Facebook</a></li>
+															</ul>
+														</div>
+									        </div>
+									        <div class="search-grid-item auth" id="mlwilliams">
+														<div class="search-grid-inside">
+										          <a href="">
+										            <img src="http://www.iowacomicbookclub.com/wp-content/uploads/2018/08/MLWILLIAMS.jpg"/>
+										          </a>
+										          <p>ML Williams</p>
+														</div>
+														<div class="hidden txt-container">
+															<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+															<ul>
+																<li><a href="#">Facebook</a></li>
+															</ul>
+														</div>
+									        </div>
+									        <div class="search-grid-item craft" id="kingscarvings">
+														<div class="search-grid-inside">
+										          <a href="">
+										            <img src="http://www.iowacomicbookclub.com/wp-content/uploads/2018/08/KINGS.jpg"/>
+										          </a>
+										          <p>Kings Carvings</p>
+														</div>
+														<div class="hidden txt-container">
+															<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+															<ul>
+																<li><a href="#">Facebook</a></li>
+															</ul>
+														</div>
+									        </div>
+									        <div class="search-grid-item auth ill" id="nickpendleton">
+														<div class="search-grid-inside">
+										          <a href="">
+										            <img src="http://www.iowacomicbookclub.com/wp-content/uploads/2018/08/NPENDLETON.jpg"/>
+										          </a>
+										          <p>Nick Pendleton</p>
+														</div>
+														<div class="hidden txt-container">
+															<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+															<ul>
+																<li><a href="#">Facebook</a></li>
+															</ul>
+														</div>
+													</div>
+												</div>
+											</div>
 									</div>
 								</div>
 							</section>
@@ -348,26 +336,21 @@
 	        var $grid = $('.grid').masonry({
 	          columnWidth: '.grid-sizer',
 	          itemSelector: '.grid-item',
-	          percentPosition: true,
-	          // columnWidth: 20%
+	          percentPosition: true
 	        });
 
 	    // CREATOR SEARCH SECTION
 
+	        // INITIALIZE MASONRY
 	        var $grid = $('.search-grid').masonry({
-	          columnWidth: '.search-grid-sizer',
-	          itemSelector: '.search-grid-item',
-	          percentPosition: true,
-						gutter: 10,
-						horizontalOrder: true
-	          // columnWidth: 20%
-	        });
+	          	columnWidth: '.search-grid-sizer',
+	          	itemSelector: '.search-grid-item',
+	          	percentPosition: true,
+				horizontalOrder: true,
+				originLeft: false,
+				gutter: 10
+	        }); 
 
-	        btns = [];
-
-			// function showHide(i) {
-            // el        = i;
-			// elBtn     = document.getElementById( el + "-btn");
 			btns      = document.getElementsByClassName("showhide-btn");
 			btnLength = btns.length;
 			btnArray  = new Array();
@@ -376,39 +359,20 @@
 			ctrsLength = ctrs.length;
 			ctrsArray = new Array();
 
-
-
 			for(var j = 0; j < btnLength; j++){
 			    btnArray.push(btns[j].getAttribute('data-btn'));
 			}
 			for(var o = 0; o < ctrsLength; o++){
 			    ctrsArray.push(ctrs[o].id);
 			}
-			// for(var k = 0; k < ctrsAuthLength; k++){
-			//     ctrsAuthArray.push(ctrsAuth[k].id);
-			// }
-			// for(var l = 0; l < ctrsIllLength; l++){
-			//     ctrsIllArray.push(ctrsIll[l].id);
-			// }
-			// for(var m = 0; m < ctrsCraftLength; m++){
-			//     ctrsCraftArray.push(ctrsCraft[m].id);
-			// }
-			// for(var m = 0; m < ctrsCosplayLength; n++){
-			//     ctrsCosplayArray.push(ctrsCosplay[n].id);
-			// }
 		});
 
 			function showHide(i) {
 				el = i;
 				elName = el.getAttribute('data-btn');
-				elStrng = '"' + elName + '"';
 				elbtn = document.getElementsByClassName( elName + "-btn");
-				console.log(elName);
-				// elArray = ctrs + el.charAt(0).toUpperCase() + el.substr(1).toLowerCase() + Array;
-				// console.log(elArray);
-				// console.log(elbtn);
-
-				// document.querySelectorAll('data-btn').classList.remove("active");
+				
+				// console.log(elName);
 
 				btnArray.forEach(
 					function(item){
@@ -427,63 +391,24 @@
 				if (elName == "all") { $('.search-grid-item' ).removeClass("hide"); } 
 				else { $('.search-grid-item.' + elName ).removeClass("hide"); }
 
-				// document.getElementByClass(elName).classList.remove('hide');
-
-				// if (el == "auth") {
-				// 	ctrsAuthArray.forEach(
-				// 		function(item){
-				// 			document.getElementById(item).classList.remove("hide");
-				// 		}
-				// 	);
-				// } else if (el == "ill") {
-				// 	ctrsIllArray.forEach(
-				// 		function(item){
-				// 			document.getElementById(item).classList.remove("hide");
-				// 		}
-				// 	);
-				// } else if ( el == "craft") {
-				// 	ctrsCraftArray.forEach(
-				// 		function(item){
-				// 			document.getElementById(item).classList.remove("hide");
-				// 		}
-				// 	);
-				// } else if ( el == "cosplay") {
-				// 	ctrsCostplayArray.forEach(
-				// 		function(item){
-				// 			document.getElementById(item).classList.remove("hide");
-				// 		}
-				// 	);
-				// } else {
-				// 	ctrsArray.forEach(
-				// 		function(item){
-				// 			document.getElementById(item).classList.remove("hide");
-				// 		}
-				// 	);
-				// }
-				// elbtn.classList.add("active");
-
 				setTimeout(function () {
 
-					var $grid = $('.search-grid').masonry({
-	          			columnWidth: '.search-grid-sizer',
-	          			itemSelector: '.search-grid-item',
-	          			percentPosition: true,
-						gutter: 10,
-						horizontalOrder: true
-			          // columnWidth: 20%
-			        });
+					var $grid = $('.search-grid').masonry();
 
 				}, 100);
 
 			}
-			//
-			// btns.forEach(function(i) {
-			// 	i.classList.remove("active");
-			// });
-			// btn.classList.add("active");
-			// console.log(elBtn);
+			function showCreator(i) {
+				elem = i;
+				elemP = elem.parentElement;
 
-		// }
+				$item_content           = $(elemP).find('.txt-container');
+	            $item_HTML              = $item_content.html()
+	            $Popup_creator			= $('.Popup_creator');	
+
+	            $Popup_creator.empty();
+		        $Popup_creator.append($item_HTML);
+			}
 		</script>
 
 	</body>
