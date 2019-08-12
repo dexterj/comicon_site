@@ -22,7 +22,7 @@
 						<h1><a href="index.html">Comic Book I-Con</a></h1>
 						<nav>
 							<a href="#menu">Menu</a>
-							<a href="#creators">Creators</a>
+							<a href="#one">Creators</a>
 						</nav>
 					</header>
 
@@ -76,7 +76,7 @@
 								<div class="inner">
 									<!-- <a href="#" class="image"><img src="http://www.fillmurray.com/600/600" alt="" /></a> -->
 									<div class="content">
-										<h2 class="major">Artists &amp; Creators</h2>										
+										<h2 class="major">Artists &amp; Creators</h2>
 
 										<button onclick="showHide(this)" data-btn="all" class="btn showhide-btn active">
 											All
@@ -101,11 +101,16 @@
 							          				<p>Aaron Carlo</p>
 							        			</a>
 												<div class="hidden txt-container">
-													<h2>Aaron Carlo</h2>
-													<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
-													<ul>
-														<li><a href="#">Facebook</a></li>
-													</ul>
+													<div class="pop_img">
+														<img src="http://www.iowacomicbookclub.com/wp-content/uploads/2018/08/ACARLO.jpg"/>
+													</div>
+													<div class="pop_info">
+														<h2>Aaron Carlo</h2>
+														<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+														<ul>
+															<li><a href="#">Facebook</a></li>
+														</ul>
+													</div>
 												</div>
 									        </div>
 									        <div class="search-grid-item auth" id="acmiller">
@@ -202,9 +207,10 @@
 								<div class="inner">
 									<a href="#" class="image"><img src="images/pic02.jpg" alt="" /></a>
 									<div class="content">
-										<h2 class="major">Tempus adipiscing</h2>
-										<p>Lorem ipsum dolor sit amet, etiam lorem adipiscing elit. Cras turpis ante, nullam sit amet turpis non, sollicitudin posuere urna. Mauris id tellus arcu. Nunc vehicula id nulla dignissim dapibus. Nullam ultrices, neque et faucibus viverra, ex nulla cursus.</p>
-										<a href="#" class="special">Learn more</a>
+										<h2 class="major">Location</h2>
+										<h3>Valley Community Center in West Des Moine</h3>
+										<p>This year Comic Book I-Con will be at the Valley Community Center in West Des Moine. Located at <a href="https://www.google.com/maps/d/u/0/viewer?ll=41.56729800000004%2C-93.76401900000002&spn=0.030824%2C0.054932&t=m&msa=0&z=14&source=embed&ie=UTF8&iwloc=0004dd183e1fa6d915561&mid=1b1-PByvI_rnYX-_QhOx5Ce9D0KE">4444 Fuller Road, West Des Moines, IA  50265</a></p>
+										<a href="https://www.google.com/maps/d/u/0/viewer?ll=41.56729800000004%2C-93.76401900000002&spn=0.030824%2C0.054932&t=m&msa=0&z=14&source=embed&ie=UTF8&iwloc=0004dd183e1fa6d915561&mid=1b1-PByvI_rnYX-_QhOx5Ce9D0KE" class="special">Google Map</a>
 									</div>
 								</div>
 							</section>
@@ -214,9 +220,35 @@
 								<div class="inner">
 									<a href="#" class="image"><img src="images/pic03.jpg" alt="" /></a>
 									<div class="content">
-										<h2 class="major">Nullam dignissim</h2>
-										<p>Lorem ipsum dolor sit amet, etiam lorem adipiscing elit. Cras turpis ante, nullam sit amet turpis non, sollicitudin posuere urna. Mauris id tellus arcu. Nunc vehicula id nulla dignissim dapibus. Nullam ultrices, neque et faucibus viverra, ex nulla cursus.</p>
-										<a href="#" class="special">Learn more</a>
+										<h2 class="major">Schedule</h2>
+
+										<h3>Convention Start/End Time</h3>
+										<p>10:00 AM to 5:00 PM</p>
+
+										<h3>Cosplay</h3>
+										<p>
+											<strong>Lineup:</strong> 2:30 PM - in the main hall<br />
+											<strong>Parade:</strong> 2:45 PM - through convention space <br />
+											<strong>Competition:</strong> 3:00 PM - on the main stage
+										</p>
+
+										<h3>Main Stage</h3>
+										<p>
+											<strong>Jedi Academy:</strong> 11:30 AM, 12:00 PM, & 1:30 PM <br>
+											<strong>Cosplya Contest:</strong> 3:00 PM
+										</p>
+
+										<h3>Lobby</h3>
+										<p>
+											<strong>Wrestling</strong>
+										</p>
+
+										<h3>Panel Room</h3>
+										<p>
+											<strong>Doomcast</strong> 
+										</p>
+
+										<a href="#" class="special">Download a PDF</a>
 									</div>
 								</div>
 							</section>
@@ -349,7 +381,7 @@
 				horizontalOrder: true,
 				originLeft: false,
 				gutter: 10
-	        }); 
+	        });
 
 			btns      = document.getElementsByClassName("showhide-btn");
 			btnLength = btns.length;
@@ -371,7 +403,7 @@
 				el = i;
 				elName = el.getAttribute('data-btn');
 				elbtn = document.getElementsByClassName( elName + "-btn");
-				
+
 				// console.log(elName);
 
 				btnArray.forEach(
@@ -388,7 +420,7 @@
 					}
 				);
 
-				if (elName == "all") { $('.search-grid-item' ).removeClass("hide"); } 
+				if (elName == "all") { $('.search-grid-item' ).removeClass("hide"); }
 				else { $('.search-grid-item.' + elName ).removeClass("hide"); }
 
 				setTimeout(function () {
@@ -404,7 +436,7 @@
 
 				$item_content           = $(elemP).find('.txt-container');
 	            $item_HTML              = $item_content.html()
-	            $Popup_creator			= $('.Popup_creator');	
+	            $Popup_creator			= $('.Popup_creator');
 
 	            $Popup_creator.empty();
 		        $Popup_creator.append($item_HTML);
