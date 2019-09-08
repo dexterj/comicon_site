@@ -3309,21 +3309,21 @@ input, select, textarea {
 		}
 
 		#menu .close, #poppin .close {
-			background-image: url("images/close.svg");
-			background-position: 75% 25%;
-			background-repeat: no-repeat;
-			background-size: 2em 2em;
+			/*background-image: url("images/close.svg");*/
+			/*background-position: 75% 25%;*/
+			/*background-repeat: no-repeat;*/
+			/*background-size: 2em 2em;*/
 			border: 0;
-			content: '';
+			/*content: 'Close';*/
 			display: block;
 			height: 4em;
 			overflow: hidden;
 			position: absolute;
 			right: 0;
 			text-align: center;
-			text-indent: 4em;
+			/*text-indent: 4em;*/
 			top: 0;
-			width: 4em;
+			/*width: 4em;*/
 		}
 
 		#menu .links, #poppin .links {
