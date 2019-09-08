@@ -3267,14 +3267,14 @@ input, select, textarea {
 		/* background: rgba(46, 49, 65, 0.8); */
 		background: transparent;
 		cursor: default;
-		height: 100%;
-		left: 0;
 		opacity: 0;
 		position: fixed;
 		text-align: center;
-		top: 0;
+		left: 2.5%;
+		top: 2.5%;
 		visibility: hidden;
-		width: 100%;
+		height: 95%;
+		width: 95%;
 	}
 
 	#poppin .Popup_creator { display: flex; justify-content: center; flex-direction: row; flex-flow: wrap;}
@@ -3309,21 +3309,12 @@ input, select, textarea {
 		}
 
 		#menu .close, #poppin .close {
-			/*background-image: url("images/close.svg");*/
-			/*background-position: 75% 25%;*/
-			/*background-repeat: no-repeat;*/
-			/*background-size: 2em 2em;*/
-			border: 0;
-			/*content: 'Close';*/
-			display: block;
-			height: 4em;
-			overflow: hidden;
-			position: absolute;
-			right: 0;
-			text-align: center;
-			/*text-indent: 4em;*/
-			top: 0;
-			/*width: 4em;*/
+		    display: block;
+		    position: absolute;
+		    right: 16px;
+		    text-align: center;
+		    top: 4px;
+		    width: auto;
 		}
 
 		#menu .links, #poppin .links {
