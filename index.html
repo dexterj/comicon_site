@@ -65,7 +65,7 @@
 				          percentPosition: true
 				        });
 
-				    // CREATOR SEARCH SECTION
+					    // CREATOR SEARCH SECTION
 
 				        // INITIALIZE MASONRY
 				        var $grid = $('.search-grid').masonry({
@@ -95,50 +95,6 @@
 
 					
 				});
-			</script>
-			<script>
-						function showHide(i) {
-							el = i;
-							elName = el.getAttribute('data-btn');
-							elbtn = document.getElementsByClassName( elName + "-btn");
-
-							// console.log(elName);
-
-							btnArray.forEach(
-								function(item){
-									$('[data-btn="' + item + '"]').removeClass("active");
-								}
-							);
-
-							$('[data-btn="' + elName + '"]').addClass("active");
-
-							ctrsArray.forEach(
-								function(item){
-									document.getElementById(item).classList.add("hide");
-								}
-							);
-
-							if (elName == "all") { $('.search-grid-item' ).removeClass("hide"); }
-							else { $('.search-grid-item.' + elName ).removeClass("hide"); }
-
-							setTimeout(function () {
-
-								var $grid = $('.search-grid').masonry();
-
-							}, 100);
-
-						}
-						function showCreator(i) {
-							elem = i;
-							elemP = elem.parentElement;
-
-							$item_content           = $(elemP).find('.txt-container');
-				            $item_HTML              = $item_content.html()
-				            $Popup_creator			= $('.Popup_creator');
-
-				            $Popup_creator.empty();
-					        $Popup_creator.append($item_HTML);
-						}
 			</script>
 
 	</head>
@@ -201,7 +157,50 @@
 
 					</section>
 					<section id="wrapper">
+<script>
+			function showHide(i) {
+				el = i;
+				elName = el.getAttribute('data-btn');
+				elbtn = document.getElementsByClassName( elName + "-btn");
 
+				// console.log(elName);
+
+				btnArray.forEach(
+					function(item){
+						$('[data-btn="' + item + '"]').removeClass("active");
+					}
+				);
+
+				$('[data-btn="' + elName + '"]').addClass("active");
+
+				ctrsArray.forEach(
+					function(item){
+						document.getElementById(item).classList.add("hide");
+					}
+				);
+
+				if (elName == "all") { $('.search-grid-item' ).removeClass("hide"); }
+				else { $('.search-grid-item.' + elName ).removeClass("hide"); }
+
+				setTimeout(function () {
+
+					var $grid = $('.search-grid').masonry();
+
+				}, 100);
+
+			}
+			function showCreator(i) {
+				elem = i;
+				elemP = elem.parentElement;
+
+				$item_content           = $(elemP).find('.txt-container');
+	            $item_HTML              = $item_content.html()
+	            $Popup_creator			= $('.Popup_creator');
+
+	            $Popup_creator.empty();
+		        $Popup_creator.append($item_HTML);
+			}
+</script>
 						<!-- One -->
 							<section id="one" class="wrapper spotlight style1">
 								<div class="inner">
