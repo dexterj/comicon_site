@@ -22,7 +22,7 @@
 
 	// Play initial animations on page load.
 		// $window.on('load', function() {
-			window.setTimeout(function() {
+			document.setTimeout(function() {
 				$body.removeClass('is-preload');
 			}, 100);
 		// });
@@ -241,7 +241,4 @@
 						$menu._hide();
 
 			});
-
-
-        console.log('main.js');
 // })(jQuery);
