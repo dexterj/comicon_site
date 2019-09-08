@@ -343,119 +343,120 @@
 				$script.ready('jquery', function() { $script('assets/js/browser.min.js', 'browser'); });
 				$script.ready('jquery', function() { $script('assets/js/breakpoints.min.js', 'breakpoints'); });
 				$script.ready('jquery', function() { $script('assets/js/util.js', 'utils'); });
+				$script.ready('jquery', function() { $script('assets/js/masonry.min.js', 'masonry'); });
 				$script.ready('jquery', function() { $script('assets/js/main.js', 'main'); });
-			$script.ready('main', function() { 
-				$(document).ready(function() {
-					// array of creators
-					bgArray = [
-						'AaronCarlo@2x.jpg', 'ACMiller@2x.jpg', 'AlexD@2x.jpg', 'anthonyhary@2x.jpg', 'ClarkeHawbaker@2x.jpg', 'CoreyKruger@2x.gif', 'CryptonianCanvas@2x.jpg', 'DRyanA@2x.jpg', 'echojewelry.jpg', 'EstebanC@2x.jpg', 'GinniePadden@2x.gif', 'GreggP@2x.jpg', 'gundamsuits@2x.jpg', 'JaimeCoker@2x.jpg', 'JasonL@2x.jpg', 'jenniferS@2x.jpg', 'JetFalco@2x.jpg', 'jimmehsling.jpg', 'JoleeneNaylor@2x.jpg', 'JonSims@2x.jpg', 'KingsCarvings@2x.jpg', 'LeeE@2x.jpg', 'LenaD@2x.jpg', 'Marc@2x.jpg', 'MikeyB@2x.jpg', 'nathanlueth@2x.jpg', 'NickPendleton@2x.jpg', 'NoahB@2x.jpg', 'omugcomics@2x.jpg', 'rjbohmer@2x.jpg', 'Scott@2x.jpg', 'ThomH@2x.jpg'];
-					// shuffle function
-					function shuffle(array) { var currentIndex = array.length, temporaryValue, randomIndex; while (0 !== currentIndex) { randomIndex = Math.floor(Math.random() * currentIndex); currentIndex -= 1; temporaryValue = array[currentIndex]; array[currentIndex] = array[randomIndex]; array[randomIndex] = temporaryValue; } return array; }
-					// shuffled array
-					bgShuffle = shuffle(bgArray);
-					// inject the randomized images
-					for (i = 31; i > 0; i--) {$("#homepage_grid").append('<div class="grid-item" data-bg-src="images/creators/' + bgShuffle[i] + '"></div>');}
-	          // BG IMAGES
-	          var BG_images = $('#homepage_grid').find('[data-bg-src]');
+				$script.ready('masonry', function() { 
+					$(document).ready(function() {
+						// array of creators
+						bgArray = [
+							'AaronCarlo@2x.jpg', 'ACMiller@2x.jpg', 'AlexD@2x.jpg', 'anthonyhary@2x.jpg', 'ClarkeHawbaker@2x.jpg', 'CoreyKruger@2x.gif', 'CryptonianCanvas@2x.jpg', 'DRyanA@2x.jpg', 'echojewelry.jpg', 'EstebanC@2x.jpg', 'GinniePadden@2x.gif', 'GreggP@2x.jpg', 'gundamsuits@2x.jpg', 'JaimeCoker@2x.jpg', 'JasonL@2x.jpg', 'jenniferS@2x.jpg', 'JetFalco@2x.jpg', 'jimmehsling.jpg', 'JoleeneNaylor@2x.jpg', 'JonSims@2x.jpg', 'KingsCarvings@2x.jpg', 'LeeE@2x.jpg', 'LenaD@2x.jpg', 'Marc@2x.jpg', 'MikeyB@2x.jpg', 'nathanlueth@2x.jpg', 'NickPendleton@2x.jpg', 'NoahB@2x.jpg', 'omugcomics@2x.jpg', 'rjbohmer@2x.jpg', 'Scott@2x.jpg', 'ThomH@2x.jpg'];
+						// shuffle function
+						function shuffle(array) { var currentIndex = array.length, temporaryValue, randomIndex; while (0 !== currentIndex) { randomIndex = Math.floor(Math.random() * currentIndex); currentIndex -= 1; temporaryValue = array[currentIndex]; array[currentIndex] = array[randomIndex]; array[randomIndex] = temporaryValue; } return array; }
+						// shuffled array
+						bgShuffle = shuffle(bgArray);
+						// inject the randomized images
+						for (i = 31; i > 0; i--) {$("#homepage_grid").append('<div class="grid-item" data-bg-src="images/creators/' + bgShuffle[i] + '"></div>');}
+			          // BG IMAGES
+			          var BG_images = $('#homepage_grid').find('[data-bg-src]');
 
-	          if(BG_images.length > 0) { var i, URL;    /*_    console.log('> LazyLoad() ---- found images to convert :' , BG_images);*/
+			          if(BG_images.length > 0) { var i, URL;    /*_    console.log('> LazyLoad() ---- found images to convert :' , BG_images);*/
 
-	            for(i = 0; i < BG_images.length; i++) {
-	             URL = 'background-image:url(' + BG_images[i].getAttribute('data-bg-src') + ');';
-	              BG_images[i].removeAttribute('data-bg-src');
-	              BG_images[i].setAttribute('style', URL);
-	              BG_images[i].classList.add('lazy-loaded');
-	              // setTimeout(function(){ $('.lazy-loaded') }, 2000);
-	              }
+			            for(i = 0; i < BG_images.length; i++) {
+			             URL = 'background-image:url(' + BG_images[i].getAttribute('data-bg-src') + ');';
+			              BG_images[i].removeAttribute('data-bg-src');
+			              BG_images[i].setAttribute('style', URL);
+			              BG_images[i].classList.add('lazy-loaded');
+			              // setTimeout(function(){ $('.lazy-loaded') }, 2000);
+			              }
 
-	            }
+			            }
 
-	            // function mouseEntrance(ev) {
-	            //     var target = $(ev.target);
-	            //     target.addClass('revealImage');
-	            //     setTimeout( function() {target.removeClass('revealImage')}, 500 );
-	            // }
+			            // function mouseEntrance(ev) {
+			            //     var target = $(ev.target);
+			            //     target.addClass('revealImage');
+			            //     setTimeout( function() {target.removeClass('revealImage')}, 500 );
+			            // }
 
-	            // $('.grid-item.lazy-loaded').mouseenter(mouseEntrance);
+			            // $('.grid-item.lazy-loaded').mouseenter(mouseEntrance);
 
-		        var $grid = $('.grid').masonry({
-		          columnWidth: '.grid-sizer',
-		          itemSelector: '.grid-item',
-		          percentPosition: true
-		        });
+				        var $grid = $('.grid').masonry({
+				          columnWidth: '.grid-sizer',
+				          itemSelector: '.grid-item',
+				          percentPosition: true
+				        });
 
-		    // CREATOR SEARCH SECTION
+				    // CREATOR SEARCH SECTION
 
-		        // INITIALIZE MASONRY
-		        var $grid = $('.search-grid').masonry({
-		          	columnWidth: '.search-grid-sizer',
-		          	itemSelector: '.search-grid-item',
-		          	percentPosition: true,
-					horizontalOrder: true,
-					originLeft: false,
-					gutter: 10
-		        });
+				        // INITIALIZE MASONRY
+				        var $grid = $('.search-grid').masonry({
+				          	columnWidth: '.search-grid-sizer',
+				          	itemSelector: '.search-grid-item',
+				          	percentPosition: true,
+							horizontalOrder: true,
+							originLeft: false,
+							gutter: 10
+				        });
 
-				btns      = document.getElementsByClassName("showhide-btn");
-				btnLength = btns.length;
-				btnArray  = new Array();
+						btns      = document.getElementsByClassName("showhide-btn");
+						btnLength = btns.length;
+						btnArray  = new Array();
 
-				ctrs  = document.getElementsByClassName("search-grid-item");
-				ctrsLength = ctrs.length;
-				ctrsArray = new Array();
+						ctrs  = document.getElementsByClassName("search-grid-item");
+						ctrsLength = ctrs.length;
+						ctrsArray = new Array();
 
-				for(var j = 0; j < btnLength; j++){
-				    btnArray.push(btns[j].getAttribute('data-btn'));
-				}
-				for(var o = 0; o < ctrsLength; o++){
-				    ctrsArray.push(ctrs[o].id);
-				}
-			});
-
-				function showHide(i) {
-					el = i;
-					elName = el.getAttribute('data-btn');
-					elbtn = document.getElementsByClassName( elName + "-btn");
-
-					// console.log(elName);
-
-					btnArray.forEach(
-						function(item){
-							$('[data-btn="' + item + '"]').removeClass("active");
+						for(var j = 0; j < btnLength; j++){
+						    btnArray.push(btns[j].getAttribute('data-btn'));
 						}
-					);
-
-					$('[data-btn="' + elName + '"]').addClass("active");
-
-					ctrsArray.forEach(
-						function(item){
-							document.getElementById(item).classList.add("hide");
+						for(var o = 0; o < ctrsLength; o++){
+						    ctrsArray.push(ctrs[o].id);
 						}
-					);
+					});
 
-					if (elName == "all") { $('.search-grid-item' ).removeClass("hide"); }
-					else { $('.search-grid-item.' + elName ).removeClass("hide"); }
+					function showHide(i) {
+						el = i;
+						elName = el.getAttribute('data-btn');
+						elbtn = document.getElementsByClassName( elName + "-btn");
 
-					setTimeout(function () {
+						// console.log(elName);
 
-						var $grid = $('.search-grid').masonry();
+						btnArray.forEach(
+							function(item){
+								$('[data-btn="' + item + '"]').removeClass("active");
+							}
+						);
 
-					}, 100);
+						$('[data-btn="' + elName + '"]').addClass("active");
 
-				}
-				function showCreator(i) {
-					elem = i;
-					elemP = elem.parentElement;
+						ctrsArray.forEach(
+							function(item){
+								document.getElementById(item).classList.add("hide");
+							}
+						);
 
-					$item_content           = $(elemP).find('.txt-container');
-		            $item_HTML              = $item_content.html()
-		            $Popup_creator			= $('.Popup_creator');
+						if (elName == "all") { $('.search-grid-item' ).removeClass("hide"); }
+						else { $('.search-grid-item.' + elName ).removeClass("hide"); }
 
-		            $Popup_creator.empty();
-			        $Popup_creator.append($item_HTML);
-				}
-			});
-		</script>
+						setTimeout(function () {
+
+							var $grid = $('.search-grid').masonry();
+
+						}, 100);
+
+					}
+					function showCreator(i) {
+						elem = i;
+						elemP = elem.parentElement;
+
+						$item_content           = $(elemP).find('.txt-container');
+			            $item_HTML              = $item_content.html()
+			            $Popup_creator			= $('.Popup_creator');
+
+			            $Popup_creator.empty();
+				        $Popup_creator.append($item_HTML);
+					}
+				});
+			</script>
 
 	</body>
 </html>
