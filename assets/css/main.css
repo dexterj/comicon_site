@@ -2085,6 +2085,11 @@ input, select, textarea {
 		}
 
 /* Section/Article */
+	section.data-bg {
+		background-image: attr(data-bg);
+		background-position: center center;
+		background-size: cover;
+	}
 
 	section.special, article.special {
 		text-align: center;
@@ -3259,7 +3264,8 @@ input, select, textarea {
 		-ms-user-select: none;
 		user-select: none;
 		-webkit-tap-highlight-color: rgba(0, 0, 0, 0);
-		background: rgba(46, 49, 65, 0.8);
+		/* background: rgba(46, 49, 65, 0.8); */
+		background: transparent;
 		cursor: default;
 		height: 100%;
 		left: 0;
@@ -3270,6 +3276,11 @@ input, select, textarea {
 		visibility: hidden;
 		width: 100%;
 	}
+
+	#poppin .Popup_creator { display: flex; justify-content: center; flex-direction: row; flex-flow: wrap;}
+	#poppin img       { width: 100%; max-width: 320px;}
+	#poppin .pop_img  { flex: 1 1 320px; height: auto; flex-basis: 320px; padding: 1em; max-width: 320px;}
+	#poppin .pop_info { width: 100%; max-width: 600px; flex: 2 1 auto; flex-basis: 600px;}
 
 		#menu .inner, #poppin .inner {
 			padding: 2.5em 1.5em 0.5em 1.5em ;
@@ -3282,13 +3293,14 @@ input, select, textarea {
 			-ms-transition: opacity 0.35s ease, -ms-transform 0.35s ease;
 			transition: opacity 0.35s ease, transform 0.35s ease;
 			-webkit-overflow-scrolling: touch;
-			background: #ed2424;
+			background: rgba(93,14,14,.95);
 			border-radius: 5px;
 			display: block;
 			max-width: 100%;
 			opacity: 0;
 			position: relative;
-			width: 18em;
+			width: 100%;
+			height: 100%;
 		}
 
 		#menu h2, #poppin h2 {
@@ -3345,6 +3357,7 @@ input, select, textarea {
 
 			#menu .inner, #poppin .inner {
 				max-height: 100%;
+				max-width: 100%;
 				overflow-y: auto;
 				overflow-x: hidden;
 			}
@@ -3552,6 +3565,10 @@ input, select, textarea {
 
 /* Wrapper */
 
+	#wrapper { background: url(/images/snazzymap.png) center center no-repeat;
+	background-size: cover;
+	background-attachment: fixed;}
+
 	#wrapper > header {
 		padding: 11em 0 2.25em 0 ;
 	}
@@ -3693,10 +3710,13 @@ input, select, textarea {
 		.wrapper.style2 {
 			background-color: #353849;
 		}
+		#two.wrapper.style2 { background-color: transparent;}
 
 			.wrapper.style2:before, .wrapper.style2:after {
 				background-image: url("data:image/svg+xml;charset=utf8,%3Csvg xmlns='http://www.w3.org/2000/svg' width='100' height='100' viewBox='0 0 100 100' preserveAspectRatio='none'%3E%3Cpolygon points='0,100 100,0 100,100' style='fill:%23353849%3B' /%3E%3C/svg%3E");
 			}
+
+			#two.wrapper.style2:before, #two.wrapper.style2:after { background-image: none; content: none;}
 
 			.wrapper.style2:before {
 				box-shadow: inset 0 -1px 0 0 #353849, 0 1px 0 0 #353849;
@@ -3867,22 +3887,39 @@ input, select, textarea {
 				-ms-flex: 1;
 			}
 
+			.wrapper.spotlight .image span {
+				width: 100%;
+position: relative;
+padding-top: 100%;
+display: block;
+			}
+
 				.wrapper.spotlight .image img {
 					border-radius: 100%;
 					width: 100%;
+				}
+
+				.wrapper.spotlight .image span img {
+					position: absolute;
+top: 0;
+right: 0;
+height: 100%;
+width: auto;
+border-radius: initial;
 				}
 
 			.wrapper.spotlight .content {
 				width: 100%;
 				-ms-flex: 2;
 			}
+			.wrapper.spotlight .content.opacityup { background: rgba(50, 50, 50, 0.9); padding: 1em;}
 
 			.wrapper.spotlight:nth-child(2n - 1) .inner {
 				-moz-flex-direction: row-reverse;
 				-webkit-flex-direction: row-reverse;
 				-ms-flex-direction: row-reverse;
 				flex-direction: row-reverse;
-				text-align: right;
+				text-align: left;
 			}
 
 			.wrapper.spotlight:nth-child(2n - 1) .image {
@@ -4253,18 +4290,18 @@ input, select, textarea {
 		-webkit-transition: background-color 0.2s ease-in-out;
 		-ms-transition: background-color 0.2s ease-in-out;
 		transition: background-color 0.2s ease-in-out;
-		border-radius: 100%;
-		border: solid 2px rgba(255, 255, 255, 0.125);
-		content: '\f105';
+		/* border-radius: 100%; */
+		/* border: solid 2px rgba(255, 255, 255, 0.125); */
+		content: '\f002';
 		display: inline-block;
-		font-size: 1.25em;
-		height: 2em;
+		font-size: .85em;
+		height: 1.5em;
 		line-height: 1.75em;
 		margin-right: 0.85em;
 		text-align: center;
 		text-indent: 0.15em;
 		vertical-align: middle;
-		width: 2em;
+		width: 1.5em;
 	}
 
 	.search-grid-item .search-grid-inside p:hover:before {
