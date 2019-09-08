@@ -243,5 +243,5 @@
 			});
 
 
-        
+        console.log('main.js');
 })(jQuery);
