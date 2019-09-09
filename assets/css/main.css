@@ -3521,7 +3521,14 @@ input, select, textarea {
 				}
 
 		}
-		body.is-preload #banner .inner { background: url(/images/icbc-logo.png) center center no-repeat; }
+		body.is-preload #banner .inner:before { 
+			display: block;
+			content: " ";
+			height: 5em; 
+			width: 5em;
+			background: url(/images/icbc-logo.png) center center no-repeat; 
+			background-size: conver;
+		}
 		body.is-preload #banner .logo {
 			-moz-transform: translateY(0.5em);
 			-webkit-transform: translateY(0.5em);
