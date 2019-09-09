@@ -3521,6 +3521,10 @@ input, select, textarea {
 				}
 
 		}
+		@-webkit-keyframes loading {
+			from {background-position-x: -10em;}
+			to   {background-position-x:  10em;}
+		} 
 		@keyframes loading {
 			from {background-position-x: -10em;}
 			to   {background-position-x:  10em;}
@@ -3533,7 +3537,16 @@ input, select, textarea {
 		    background: url(/images/icbc-logo.png) center center no-repeat;
 		    background-size: contain;
 		    margin: 0 auto;
-		    animation: loading 1s infinate;
+		    -webkit-transform: rotate(360deg);
+		    -webkit-transition-duration: 1s;
+		    -webkit-transition-delay: now;
+		    -webkit-animation-timing-function: linear;
+		    -webkit-animation-iteration-count: infinite;
+		    transform: rotate(360deg);
+		    transition-duration: 1s;
+		    transition-delay: now;
+		    animation-timing-function: linear;
+		    animation-iteration-count: infinite;
 		}
 		body.is-preload #banner .logo {
 			-moz-transform: translateY(0.5em);
