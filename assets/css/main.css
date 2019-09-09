@@ -3522,8 +3522,8 @@ input, select, textarea {
 
 		}
 		@keyframes loading {
-			from {background-positionX: -10em;}
-			to   {background-positionX:  10em;}
+			from {background-position-x: -10em;}
+			to   {background-position-x:  10em;}
 		} 
 		body.is-preload #banner .inner:before { 
 			display: block;
