@@ -109,7 +109,7 @@ input, select, textarea {
  center;
 	}
 
-		body.is-preload *, body.is-preload *:before, body.is-preload *:after {
+		/*body.is-preload *, body.is-preload *:before, body.is-preload *:after {
 			-moz-animation: none !important;
 			-webkit-animation: none !important;
 			-ms-animation: none !important;
@@ -118,7 +118,7 @@ input, select, textarea {
 			-webkit-transition: none !important;
 			-ms-transition: none !important;
 			transition: none !important;
-		}
+		}*/
 
 /* Type */
 
@@ -3557,11 +3557,11 @@ input, select, textarea {
 		    background: url(/images/icbc-logo.png) center center no-repeat;
 		    background-size: contain;
 		    margin: 0 auto;
-		    -webkit-animation: rotating 2s ease-in-out infinite;
-		    -moz-animation: rotating 2s ease-in-out infinite;
-		    -ms-animation: rotating 2s ease-in-out infinite;
-		    -o-animation: rotating 2s ease-in-out infinite;
-		    animation: rotating 2s ease-in-out infinite;
+		    -webkit-animation: rotating 5s ease-in-out infinite;
+		    -moz-animation: rotating 5s ease-in-out infinite;
+		    -ms-animation: rotating 5s ease-in-out infinite;
+		    -o-animation: rotating 5s ease-in-out infinite;
+		    animation: rotating 5s ease-in-out infinite;
 		}
 		body.is-preload #banner .logo {
 			-moz-transform: translateY(0.5em);
