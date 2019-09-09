@@ -3521,13 +3521,19 @@ input, select, textarea {
 				}
 
 		}
+		@keyframes loading {
+			from {background-positionX: -10em;}
+			to   {background-positionX:  10em;}
+		} 
 		body.is-preload #banner .inner:before { 
 			display: block;
-			content: " ";
-			height: 5em; 
-			width: 5em;
-			background: url(/images/icbc-logo.png) center center no-repeat; 
-			background-size: conver;
+		    content: " ";
+		    height: 10em;
+		    width: 10em;
+		    background: url(/images/icbc-logo.png) center center no-repeat;
+		    background-size: contain;
+		    margin: 0 auto;
+		    animation: loading 1s infinate;
 		}
 		body.is-preload #banner .logo {
 			-moz-transform: translateY(0.5em);
