@@ -3281,7 +3281,7 @@ input, select, textarea {
 	#poppin img       { width: 100%; max-width: 320px;}
 	#poppin .pop_img  { flex: 1 1 320px; height: auto; flex-basis: 320px; padding: 1em; max-width: 320px;}
 	#poppin .pop_info { width: 100%; max-width: 600px; flex: 2 1 auto; flex-basis: 600px;}
-
+  #poppin .pop_info.left { text-align: left; }
 		#menu .inner, #poppin .inner {
 			padding: 2.5em 1.5em 0.5em 1.5em ;
 			-moz-transform: translateY(0.5em);
@@ -3301,6 +3301,7 @@ input, select, textarea {
 			position: relative;
 			width: 100%;
 			height: 100%;
+			overflow-y: auto;
 		}
 
 		#menu h2, #poppin h2 {
