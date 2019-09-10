@@ -3391,6 +3391,8 @@ input, select, textarea {
 			width: 55em;
 			position: relative;
 			z-index: 1;
+			background-color: rgba(0, 0, 0, 0.7);
+			padding: 2em 1em;
 		}
 
 		#banner .logo {
@@ -3549,7 +3551,7 @@ input, select, textarea {
 		    transform: rotate(360deg);
 		  }
 		}
-		body.is-preload #banner .inner:before { 
+		body.is-preload #banner .inner:before {
 			display: block;
 		    content: " ";
 		    height: 10em;
@@ -4286,7 +4288,7 @@ border-radius: initial;
 		}
 
 	}
-	.image-section .grid-item, .image-section .grid-sizer { opacity: 0.2; width: 33.33333%; background-repeat: no-repeat; background-position: center center; background-size: cover!important; transition: opacity 1s ease; }
+	.image-section .grid-item, .image-section .grid-sizer { opacity: 0.5; width: 33.33333%; background-repeat: no-repeat; background-position: center center; background-size: cover!important; transition: opacity 1s ease; }
 	@media (min-width: 31.25em){ 	.image-section .grid-item, .image-section .grid-sizer { width: 25%; } }
 	@media (min-width: 37.5em){ 	.image-section .grid-item, .image-section .grid-sizer { width: 20%; } }
 	@media (min-width: 48em){ 	    .image-section .grid-item, .image-section .grid-sizer { width: 16.66667%; } }
