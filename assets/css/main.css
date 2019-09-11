@@ -3419,7 +3419,7 @@ input, select, textarea {
 				/* border-radius: 100%; */
 				/* border: solid 2px rgba(255, 255, 255, 0.125); */
 				cursor: default;
-				display: inline-block;
+				display: block;
 				/* font-size: 4em; */
 				/* line-height: 2.25em; */
 				text-align: center;
